@@ -18,17 +18,21 @@ public class Main {
     public static void main(String[] args){
         List<String> yearMonths = new ArrayList<>(Arrays.asList("January","February","March","April","May","June","July","August","September","October","November","December"));
         // Exercici 3
-        yearMonths.forEach(month -> System.out.println(month));
-        System.out.println("\n");
+        System.out.println("Lambda: ");
+        yearMonths.forEach(month -> System.out.print(month + "/"));
+        System.out.print("\n\n");
         // Exercici 4
-        yearMonths.forEach(System.out::println);
-        System.out.println("\n");
+        System.out.println("Method reference: ");
+        yearMonths.forEach(System.out::print);
+        System.out.print("\n\n");
+
+        System.out.println("Own method reference: ");
         yearMonths.forEach(printarClass::printar);
     }
 }
 
 class printarClass{
     public static void printar(Object obj){
-        System.out.println(" > " + obj.toString());
+        System.out.print(" > " + obj.toString());
     };
 }
